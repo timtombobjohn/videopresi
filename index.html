@@ -1,0 +1,57 @@
+<?php 
+header("Cache-Control: max-age=0");
+?>
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1 class="slogan">ENTDECKE NEUES AUS ALTEN ZEITEN!</h1>
+    <main>
+
+        <div class="video">
+            <div class="overlay"></div>
+            <img class="slide-img" src="bilder/wagner1.png"> 
+            <div class="shadow"></div>
+            <h2>Der Wagner</h2>
+            <p>Hackenstiel mit Stil.</p>
+            <a class="button" href="#" onclick="playVideo('filme/wagner.mp4')">Film starten</a>
+        </div>
+        <div class="video">
+            <div class="overlay"></div>
+            <img class="slide-img" src="bilder/wengeter1.png">
+            <div class="shadow"></div>
+            <h2>Der Wengeter</h2>
+            <p>Von der Traube in die Flasche.</p>
+            <a class="button" href="#" onclick="playVideo('filme/wengeter.mp4')">Film starten</a>
+        </div> 
+        <div class="video">
+	          <div class="overlay"></div>
+            <img class="slide-img" src="bilder/schmied1.png">
+            <div class="shadow"></div>
+            <h2>Der Schmied</h2>
+            <p>Eisen will geschmiedet werden</p>
+            <a class="button" href="#" onclick="playVideo('filme/schmied.mp4')">Film starten</a>
+        </div>
+        
+    </main>
+
+    <div class="logo-container">
+      <img align="right" src="bilder/startseite_carousel.svg">
+    </div>
+
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+<!-- kein zoom effekt, wenn maus über bild
+schrift besser lesbar wengeter, nahaufnahme schmied, größere überschrift, bilder etwas runter rutschen, 
+logo mittig oder auf linie, langsamere bildwechsel, timer vor abbruch, slideshow gleichzeitig?-->
