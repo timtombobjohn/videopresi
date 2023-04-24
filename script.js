@@ -1,3 +1,14 @@
+
+//sleep function to add time delay
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+
+//################### SLIDESHOW ###########################
+
+//stored images
 var imageSources = [
     ["bilder/wagner1.png", "bilder/wagner2.png", "bilder/wagner3.png","bilder/wagner4.png","bilder/wagner5.png"],
     ["bilder/wengeter1.png", "bilder/wengeter2.png", "bilder/wengeter3.png", "bilder/wengeter4.png", "bilder/wengeter5.png",],
@@ -5,22 +16,20 @@ var imageSources = [
 ];
 
 
-
+//variable to refer to image in imageSources
 var currentIndex = 1;
 
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
 
+//function to change the source of the images in index.html 
 async function changeImage() {
   const img = document.getElementsByClassName("slide-img");
-
 
   for(let i = 0; i<img.length; i++){
     img[i].style.opacity=0.3;
     await sleep(400);
     
   }
+
   await sleep(400);
 
   for(let i = 0; i<img.length; i++){
@@ -36,10 +45,14 @@ async function changeImage() {
   }
 }
 
-setInterval(changeImage, 8700); // Change image every 5 seconds
+//recall the fuction every 8,7 seconds
+setInterval(changeImage, 8700);
 
 
 
+//####################### VIDEOPLAYER ##############################
+
+//opens a video in fullscreen, closes by any click or when the video ends
 async function playVideo(videoPath) {
   var videoPlayer = document.createElement('video');
   videoPlayer.src = videoPath;
@@ -47,7 +60,7 @@ async function playVideo(videoPath) {
   videoPlayer.autoplay = true;
   document.body.appendChild(videoPlayer);
   videoPlayer.requestFullscreen();
-  await sleep(4000);
+  await sleep(3000);        //delay to avoid double click problems
   videoPlayer.addEventListener('click', function() {
     document.body.removeChild(videoPlayer); 
   });
