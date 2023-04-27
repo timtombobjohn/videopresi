@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Video Player</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<h1>Video Player</h1>
+	<button onclick="playVideo()">Play Video</button>
+	<button onclick="stopVideo()">Stop Video</button>
+	<script>
+		function playVideo() {
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					console.log("Received response: " + this.responseText);
+				}
+			};
+			xhttp.open("GET", "/play_video", true);
+			xhttp.send();
+		}
+
+		function stopVideo() {
+ 			 fetch("/stop_video")
+   			 .then(response => {
+     		 if (response.ok) {
+       		 window.location.href = "/";
+      		} else {
+        	console.log("Error stopping video.");
+      }
+    });
+}
+	</script>
+</body>
+</html>
