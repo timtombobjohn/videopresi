@@ -6,5 +6,3 @@ If the visitor clicks again, no matter where, he gets back to the homescreen.
 
 
 Originally planned to run on a RaspberryPi in "kiosk mode" connected to a touch screen.
-
-It's my very first project.
